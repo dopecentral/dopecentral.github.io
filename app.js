@@ -34,7 +34,7 @@ function generateTeam() {
     return;
   }
   if (numTeams > numPlayers) {
-    result.innerHTML = "Number of teams is greater than numbber of players, try again."
+    result.innerHTML = "Number of teams is greater than number of players, try again."
     return;
   }
   var players = [];
