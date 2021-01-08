@@ -8,6 +8,9 @@ function generateNumber() {
   if (num < 2) {
   	window.alert("Pick a whole number greater than 1");
   }
+  else if (num === null) {
+    return;
+  }
   else {
   	const Http = new XMLHttpRequest();
   	const url = 'https://www.random.org/integers/?num=1&min=1&max=' + num + '&col=1&base=10&format=plain&rnd=new';
@@ -24,12 +27,18 @@ function generateNumber() {
 function generateTeam() {
   var numPlayers = parseInt(prompt("Enter the number of players:\n"));
   console.log(numPlayers);
-  if (Number.isNaN(numPlayers)) {
+  if (numPlayers === null) {
+    return;
+  }
+  else if (Number.isNaN(numPlayers)) {
     result.innerHTML = "Number of players is invalid, try again."
     return;
   }
   var numTeams = parseInt(prompt("Enter the number of teams:\n"));
-  if (Number.isNaN(numTeams)) {
+  if (numTeams === null) {
+    return;
+  }
+  else if (Number.isNaN(numTeams)) {
     result.innerHTML = "Number of teams is invalid, try again."
     return;
   }
