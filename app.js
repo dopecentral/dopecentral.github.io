@@ -25,23 +25,24 @@ function generateNumber() {
 }
 
 function generateTeam() {
-  var numPlayers = parseInt(prompt("Enter the number of players:\n"));
-  console.log(numPlayers);
+  var numPlayers = prompt("Enter the number of players:\n");
   if (numPlayers === null) {
     return;
   }
-  else if (Number.isNaN(numPlayers)) {
+  else if (Number.isNaN(parseInt(numPlayers))) {
     result.innerHTML = "Number of players is invalid, try again."
     return;
   }
-  var numTeams = parseInt(prompt("Enter the number of teams:\n"));
+  numPlayers = parseInt(numPlayers);
+  var numTeams = prompt("Enter the number of teams:\n");
   if (numTeams === null) {
     return;
   }
-  else if (Number.isNaN(numTeams)) {
+  else if (Number.isNaN(parseInt(numTeams))) {
     result.innerHTML = "Number of teams is invalid, try again."
     return;
   }
+  numTeams = parseInt(numTeams);
   if (numTeams > numPlayers) {
     result.innerHTML = "Number of teams is greater than number of players, try again."
     return;
@@ -51,6 +52,9 @@ function generateTeam() {
   for (i = 0; i < numPlayers; i++){
     var phrase = "Enter player " + (i+1).toString() + "'s name:\n";
     player = prompt(phrase);
+    if (player === null) {
+      return;
+    }
     players.push(player);
   }
   for (i = 0; i < numTeams; i++){
