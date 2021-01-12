@@ -1,6 +1,7 @@
 const numbergenerator_div = document.getElementById("numbergenerator");
 const teamgenerator_div = document.getElementById("teamgenerator");
 const drinkgenerator_div = document.getElementById("drinkgenerator");
+const soundboard_div = document.getElementById("soundboard");
 const result_div = document.getElementById("result");
 
 function generateNumber() {
@@ -88,6 +89,9 @@ function main() {
 
   drinkgenerator_div.addEventListener('click', function() {
     result_div.innerHTML = "Try again tomorrow...";
+  });
+  soundboard_div.addEventListener('click', function() {
+    //insert function here
   });
 }
 
